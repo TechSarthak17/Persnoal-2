@@ -293,35 +293,45 @@ p {
   gap: 1.5rem;
 }
 
-.playlist-cover-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.playlist-cover-fallback {
-  width: 100%;
-  height: 300px;
-  background: linear-gradient(to bottom, #d6d6f5, #f5d6d6);
-  border-radius: 10px;
-}
-
 .audio-container {
   width: 100%;
+  text-align: center;
 }
 
-.placeholder-audio-text {
-  color: #999;
-  font-style: italic;
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-audio {
-  width: 100%;
-  border-radius: 5px;
+.player-controls button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Footer */
+.player-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.player-controls svg {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+/* Footer & Sarthak Message */
 .footer {
   text-align: center;
   padding: 1rem;
@@ -333,6 +343,20 @@ audio {
 .footer p {
   color: #fff;
   margin: 0;
+}
+
+.sarthak-message {
+  margin-top: 1rem;
+  font-family: var(--font-family-heading);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px #fff;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff; }
+  to { text-shadow: 0 0 10px #fff, 0 0 20px var(--secondary-color); }
 }
 
 /* Secret Modal */

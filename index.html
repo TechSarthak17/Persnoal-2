@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <meta name="description" content="A website celebrating three years of our journey together.">
   <meta name="author" content="Your Name">
 </head>
@@ -16,12 +16,13 @@
   <header class="hero" role="banner">
     <div class="hero-content">
       <h1 class="hero-title">Three Years of Us</h1>
-      <p class="hero-subtitle">Celebrating our beautiful journey together since 12/10/2022</p>
+      <p class="hero-subtitle">Celebrating our beautiful journey together since [CUSTOMIZE: Your Date]</p>
       <button id="cta-button" class="cta-button" aria-controls="secret-modal">Open Gift 🎁</button>
     </div>
-    <div class="hero-image-container ">
-        <img src="/Enjoying.jpg" alt="Our beautiful journey together" class="hero-image">
+    <div class="hero-image-container">
+      <div class="hero-fallback"></div>
     </div>
+  </header>
 
   <section id="our-story" class="section timeline">
     <h2 class="section-title">Our Story</h2>
@@ -29,42 +30,42 @@
       <div class="timeline-item left">
         <div class="timeline-content">
           <h3>The Day It All Began</h3>
-          <p class="timeline-date">12/10/2020</p>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
           <p>The first time our paths crossed, a new chapter began. It was a simple moment that changed everything.</p>
         </div>
       </div>
       <div class="timeline-item right">
-        <div class="timeline-content" >
+        <div class="timeline-content">
           <h3>Our First Adventure</h3>
-          <p class="timeline-date">24/03/2024</p>
-          <p>Holi</p>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
+          <p>Remember that trip to [CUSTOMIZE: Place]? The laughter, the late-night talks... it's a memory I'll always cherish.</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="timeline-content">
-          <h3>Hug</h3>
-          <p class="timeline-date">29/08/2024</p>
-          <p>.</p>
+          <h3>Meeting the Family</h3>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
+          <p>That nervous excitement when we introduced each other to our families. They saw what I already knew: you're amazing.</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="timeline-content">
-          <h3>Garba</h3>
-          <p class="timeline-date">10/10/2024</p>
-          <p>Garba khela tha aur bahut maza aaya tha.</p>
+          <h3>Moving In Together</h3>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
+          <p>Our little home, a sanctuary of our own. Every day with you is a joy.</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="timeline-content">
-          <h3>Our Farewell</h3>
-          <p class="timeline-date">10/10/2025</p>
-          <p>My sweetheart just looking at me with those beautiful eyes made me realize how lucky I am.</p>
+          <h3>Surviving [CUSTOMIZE: Hardship]</h3>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
+          <p>Through every challenge, our bond grew stronger. I'm so grateful to have you by my side.</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="timeline-content">
-          <h3>Hum akhri baar exam time pe mile the </h3>
-          <p class="timeline-date">04/03/2025</p>
+          <h3>Building a Future</h3>
+          <p class="timeline-date">[CUSTOMIZE: Date]</p>
           <p>With you, I can dream bigger. I'm excited for all the adventures yet to come.</p>
         </div>
       </div>
@@ -74,9 +75,7 @@
   <section id="gallery" class="section gallery">
     <h2 class="section-title">Our Favorite Moments</h2>
     <div class="gallery-grid">
-      <img src="/Enjoying.jpg" alt="Enjoying">
-      <img src="/Holi.jpg" alt="Holi Celebration">
-      <img src="/Hug.jpg" alt="Hug">
+      <div class="gallery-placeholder">
         <p>Your photos go here!</p>
       </div>
     </div>
@@ -88,7 +87,7 @@
       <div class="note-card">
         <p class="note-text" id="typed-message"></p>
         <div class="signature">
-          <p class="note-signature">I love you my sweetheart<br> Your Darling</p>
+          <p class="note-signature">All my love,<br>[CUSTOMIZE: Your Name]</p>
         </div>
       </div>
     </div>
@@ -97,20 +96,34 @@
   <section id="playlist" class="section playlist">
     <h2 class="section-title">Our Song</h2>
     <div class="playlist-player">
-      <div class="playlist-cover-fallback"></div>
       <div class="audio-container">
-        <audio loop id="our-song">
-          <source src="/Mylove.mp3" type="audio/mpeg">
+        <audio id="audio-player">
+          <source src="song1.mp3" type="audio/mpeg">
+          <source src="song2.mp3" type="audio/mpeg">
+          <source src="song3.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
-        <p class="placeholder-audio-text">Click "Open Gift" to start the song!</p>
+        <div class="player-controls">
+          <button id="prev-btn" aria-label="Previous Song">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-back"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+          </button>
+          <button id="play-pause-btn" aria-label="Play/Pause Song">
+            <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pause" style="display: none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
+          <button id="next-btn" aria-label="Next Song">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-forward"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <p>&copy; 2022 - 2025 | Three Years of Love</p>
-    <p>Made with ❤️ for you</p>
+    <div class="sarthak-message">
+      <p>Yeh sab aapke Sarthak ne kiya hai 💖</p>
+    </div>
   </footer>
 
   <div id="secret-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -125,6 +138,6 @@
     </div>
   </div>
 
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
