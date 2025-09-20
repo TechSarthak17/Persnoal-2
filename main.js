@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const songs = [
     // CUSTOMIZE: Add your song filenames here.
-    'song1.mp3',
+    'Mylove.mp3',
     'song2.mp3',
     'song3.mp3'
   ];
