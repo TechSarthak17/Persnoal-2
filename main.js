@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const songs = [
     // CUSTOMIZE: Add your song filenames here.
     'Mylove.mp3',
-    'song2.mp3',
-    'song3.mp3'
+    'SaudeBaazi      Javed Ali   Aakrosh Movie Song.mp3',
+    'song3.mp3',
+    //'SaudeBaazi      Javed Ali   Aakrosh Movie Song.mp3',
+    'Nadaaniyan  Akshat acharya  nadaniyaan song status  nadaniyaan lyrics #shorts #nadaniyaan.mp3'
   ];
   let currentSongIndex = 0;
 
