@@ -1,9 +1,9 @@
-/* Custom CSS Properties / Variables */
+/* Custom CSS Properties / Variables -- VIOLET THEME */
 :root {
-  --primary-color: #ff758f;
-  --secondary-color: #ffd8e2;
+  --primary-color: #a76fcf;      /* Rich Violet */
+  --secondary-color: #e0d2f7;    /* Light Lavender */
   --text-color: #333;
-  --bg-color: #fce7f3;
+  --bg-color: #f5f0fc;           /* Very Pale Violet */
   --card-bg-color: #fff;
   --font-family-heading: 'Playfair Display', serif;
   --font-family-body: 'Poppins', sans-serif;
@@ -112,10 +112,11 @@ p {
   transform: scale(1.05);
 }
 
+/* Updated hero fallback to match violet theme */
 .hero-fallback {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #fcd0de, #c4a1e3);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   border-radius: 15px;
 }
 
@@ -132,8 +133,9 @@ p {
   margin-top: var(--spacing-medium);
 }
 
+/* Updated hover color for violet button */
 .cta-button:hover {
-  background-color: #e5627a;
+  background-color: #8e5ccb; /* Darker violet */
   transform: translateY(-3px);
 }
 
