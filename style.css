@@ -115,9 +115,13 @@ p {
 /* Updated hero fallback to match violet theme */
 .hero-fallback {
   width: 100%;
-  height: 400px;
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  height: 400px; /* Aap iski height ko adjust kar sakte hain */
   border-radius: 15px;
+
+  /* Nayi lines add ki hain */
+  background-image: url('/image/Enjoying.jpg'); /* Yahan apni image ka path daalein */
+  background-size: cover; /* Photo ko poora cover karne ke liye */
+  background-position: center; /* Photo ko center mein rakhne ke liye */
 }
 
 .cta-button {
@@ -491,6 +495,89 @@ p {
 }
 
 /* A11Y - prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image, .cta-button, .gallery-grid img, .modal, .modal-content {
+    transition: none !important;
+  }
+  .typewriter {
+    animation: none !important;
+    white-space: normal;
+    border-right: none;
+  }
+}
+
+
+
+
+/* ========================================= */
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN      */
+/* ========================================= */
+
+/* For Tablets and smaller devices (768px and below) */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+
+  .section {
+    /* Thodi padding kam kar rahe hain */
+    padding: var(--spacing-medium) var(--spacing-small);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-medium);
+    padding-top: 4rem; /* Upar se thodi zyada jagah */
+  }
+
+  /* Timeline ko single column mein set karna */
+  .timeline-container::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 10px;
+  }
+
+  .timeline-item.right {
+    left: 0%;
+  }
+
+  .timeline-item::after,
+  .timeline-item.right::after {
+    left: 15px;
+  }
+}
+
+/* For small mobile phones (480px and below) */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; } /* Heading aur choti */
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  
+  p { font-size: 0.9rem; } /* Paragraph text thoda chota */
+
+  .cta-button {
+    padding: 0.6rem 1.2rem; /* Button thoda chota */
+    font-size: 0.9rem;
+  }
+  
+  .note-card {
+      padding: 1.5rem;
+  }
+  
+  .modal-content {
+      padding: 1.5rem;
+  }
+  
+  .modal-message {
+      font-size: 1rem;
+  }
+}
+
+/* A11Y - prefers-reduced-motion (Isko waise hi rehne dein) */
 @media (prefers-reduced-motion: reduce) {
   .hero-image, .cta-button, .gallery-grid img, .modal, .modal-content {
     transition: none !important;

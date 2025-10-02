@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // CUSTOMIZE: Add your song filenames here.
     'music/Mylove.mp3',
     'music/SaudeBaazi      Javed Ali   Aakrosh Movie Song.mp3',
-    'music/Nadaaniyan.mp3'
+    'music/Nadaaniyan.mp3',
+    'music/Falak_Se_Poochlo_Chahe_Gawah_Ye_Chaand_Taare_Hain_Sta.mp3'
   ];
   let currentSongIndex = 0;
 
