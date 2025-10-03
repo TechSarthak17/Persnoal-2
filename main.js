@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load the first song
   loadSong(currentSongIndex);
 
+  // NAYI LINE: Jab gaana khatam ho to agla chala do
+ audioPlayer.addEventListener('ended', playNextSong);
+
 
   // --- All other existing logic below ---
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -145,4 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+});
+
+// --- Swiper Slider Initialization ---
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true, // Taaki slides loop mein chalti rahein
+  autoplay: {
+    delay: 2500, // Har 2.5 second mein slide badlegi
+    disableOnInteraction: false,
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });

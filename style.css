@@ -588,3 +588,27 @@ p {
     border-right: none;
   }
 }
+
+/* Swiper Slider Styles */
+.swiper {
+  width: 90%;
+  max-width: 600px; /* Aap iski max-width badal sakte hain */
+  height: 400px; /* Aap iski height badal sakte hain */
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

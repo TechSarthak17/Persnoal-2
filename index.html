@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="A website celebrating three years of our journey together.">
   <meta name="author" content="Your Name">
@@ -76,12 +77,18 @@
 
   <section id="gallery" class="section gallery">
   <h2 class="section-title">Our Favorite Moments</h2>
-  <div class="gallery-grid">
-    <img src="/image/Hug.jpg" alt="Our first trip together.">
-    <img src="/image/Farewell.jpg" alt="Watching the sunset on the beach.">
-    <img src="/image/Garba.jpg" alt="A funny selfie from our date.">
-    <img src="/image/Holi.jpg" alt="A romantic dinner night.">
-    </div>
+  <div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="/image/Hug.jpg" alt="Our first trip together."></div>
+    <div class="swiper-slide"><img src="/image/Farewell.jpg" alt="Watching the sunset on the beach."></div>
+    <div class="swiper-slide"><img src="/image/Garba.jpg" alt="A funny selfie from our date."></div>
+    <div class="swiper-slide"><img src="/image/Holi.jpg" alt="A romantic dinner night."></div>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
 </section>
 
   <section id="messages" class="section love-notes">
@@ -142,6 +149,8 @@
     </div>
   </div>
 
-  <script src="main.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <script src="main.js"></script>
+
 </body>
 </html>
