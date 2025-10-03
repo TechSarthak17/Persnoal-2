@@ -16,11 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const pauseIcon = document.getElementById('pause-icon');
 
   const songs = [
-    // CUSTOMIZE: Add your song filenames here.
     'music/Mylove.mp3',
-    'music/SaudeBaazi      Javed Ali   Aakrosh Movie Song.mp3',
+    'music/SaudeBaazi.mp3',
     'music/Nadaaniyan.mp3',
-    'music/Falak_Se_Poochlo_Chahe_Gawah_Ye_Chaand_Taare_Hain_Sta.mp3'
+    'music/Falak.mp3'
   ];
   let currentSongIndex = 0;
 
@@ -65,10 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load the first song
   loadSong(currentSongIndex);
-
-  // NAYI LINE: Jab gaana khatam ho to agla chala do
- audioPlayer.addEventListener('ended', playNextSong);
-
+  audioPlayer.addEventListener('ended', playNextSong);
 
   // --- All other existing logic below ---
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -79,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const confetti = document.createElement('div');
       confetti.classList.add('confetti');
       confetti.style.left = `${Math.random() * 100}vw`;
-      confetti.style.top = `${-10 - Math.random() * 20}vh`; // Start above the viewport
+      confetti.style.top = `${-10 - Math.random() * 20}vh`;
       confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
       confetti.style.animationDelay = `${Math.random() * 2}s`;
       confetti.style.animationDuration = `${3 + Math.random() * 2}s`;
@@ -87,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Only run confetti if motion is not reduced
   if (!prefersReducedMotion) {
     createConfetti(50);
   }
@@ -123,6 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('visible');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    // ✔️ YEH HAI IMPORTANT LINE JO GAANA PLAY KARTI HAI
+    audioPlayer.play(); 
   };
 
   const closeModal = () => {
@@ -134,40 +131,33 @@ document.addEventListener('DOMContentLoaded', () => {
   ctaButton.addEventListener('click', openModal);
   closeModalButton.addEventListener('click', closeModal);
 
-  // Close modal on outside click
   window.addEventListener('click', (event) => {
     if (event.target === modal) {
       closeModal();
     }
   });
 
-  // Close modal on Escape key press
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && modal.classList.contains('visible')) {
       closeModal();
     }
   });
 
-});
+  // --- Swiper Slider Initialization ---
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
-// --- Swiper Slider Initialization ---
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  loop: true, // Taaki slides loop mein chalti rahein
-  autoplay: {
-    delay: 2500, // Har 2.5 second mein slide badlegi
-    disableOnInteraction: false,
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 });
