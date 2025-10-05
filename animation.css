@@ -1,0 +1,23 @@
+/* animation.css */
+
+/* This styles the canvas where the 3D animation will live */
+#bg-canvas {
+  position: fixed; /* Stays in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Puts it behind all your other content */
+  outline: none;
+}
+
+/* This is for the optional color-changing background */
+body {
+  /* We define CSS variables that JavaScript will control */
+  --color-one: #f3e7e9; /* Start color (pinkish) */
+  --color-two: #e3eeff; /* End color (bluish) */
+
+  /* The actual background is a gradient using these variables */
+  background: linear-gradient(135deg, var(--color-one), var(--color-two));
+  background-attachment: fixed; /* Keeps the gradient fixed during scroll */
+}

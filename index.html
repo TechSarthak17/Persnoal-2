@@ -8,11 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="/animation.css">
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="A website celebrating three years of our journey together.">
   <meta name="author" content="Your Name">
 </head>
 <body>
+
+   <canvas id="bg-canvas"></canvas>
 
   <header class="hero" role="banner">
     <div class="hero-content">
@@ -151,6 +154,17 @@
 
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
  <script src="main.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="animation.js"></script>
+
 
 </body>
 </html>
